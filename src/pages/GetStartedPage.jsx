@@ -57,11 +57,11 @@ const GetStartedPage = () => {
   }
 
   return (
-    <div style={{ padding: '80px 20px', maxWidth: '800px', margin: '0 auto', minHeight: '60vh' }}>
+    <div className="get-started-container">
       <div className="cursive-title" style={{ color: 'var(--green-accent)', textAlign: 'center' }}>Let's Build Something</div>
       <h2 style={{ fontSize: '42px', textAlign: 'center', marginBottom: '40px' }}>Schedule a Strategy Session</h2>
       
-      <form onSubmit={handleSubmit} className={`get-started-form ${isSubmitting ? 'form-submitting' : ''}`} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', background: 'var(--white)', padding: '40px', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', position: 'relative', overflow: 'hidden' }}>
+      <form onSubmit={handleSubmit} className={`get-started-form ${isSubmitting ? 'form-submitting' : ''}`}>
         
         {/* Submitting overlay */}
         {isSubmitting && (
@@ -75,34 +75,34 @@ const GetStartedPage = () => {
           </div>
         )}
 
-        <div style={{ gridColumn: 'span 2' }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Full Name</label>
-          <input type="text" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #eaeaea' }} disabled={isSubmitting} />
+        <div className="form-group-full">
+          <label className="form-label">Full Name</label>
+          <input className="form-input" type="text" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} disabled={isSubmitting} />
         </div>
         
-        <div>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Email Address</label>
-          <input type="email" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #eaeaea' }} disabled={isSubmitting} />
+        <div className="form-group">
+          <label className="form-label">Email Address</label>
+          <input className="form-input" type="email" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} disabled={isSubmitting} />
         </div>
         
-        <div>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Phone Number</label>
-          <input type="tel" required value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #eaeaea' }} disabled={isSubmitting} />
+        <div className="form-group">
+          <label className="form-label">Phone Number</label>
+          <input className="form-input" type="tel" required value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} disabled={isSubmitting} />
         </div>
 
-        <div>
-           <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Location (City / State)</label>
-           <input type="text" required value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #eaeaea' }} disabled={isSubmitting} />
+        <div className="form-group">
+           <label className="form-label">Location (City / State)</label>
+           <input className="form-input" type="text" required value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})} disabled={isSubmitting} />
         </div>
 
-        <div>
-           <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Preferred Time</label>
-           <input type="text" placeholder="e.g. 10:00 AM EST" required value={formData.time} onChange={e => setFormData({...formData, time: e.target.value})} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #eaeaea' }} disabled={isSubmitting} />
+        <div className="form-group">
+           <label className="form-label">Preferred Time</label>
+           <input className="form-input" type="text" placeholder="e.g. 10:00 AM EST" required value={formData.time} onChange={e => setFormData({...formData, time: e.target.value})} disabled={isSubmitting} />
         </div>
 
-        <div style={{ gridColumn: 'span 2' }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Service of Interest</label>
-          <select value={formData.service} onChange={e => setFormData({...formData, service: e.target.value})} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #eaeaea' }} disabled={isSubmitting}>
+        <div className="form-group-full">
+          <label className="form-label">Service of Interest</label>
+          <select className="form-input" value={formData.service} onChange={e => setFormData({...formData, service: e.target.value})} disabled={isSubmitting}>
             <option>Landing Page</option>
             <option>E-Commerce Store</option>
             <option>Custom Web App</option>
@@ -110,12 +110,12 @@ const GetStartedPage = () => {
           </select>
         </div>
 
-        <div style={{ gridColumn: 'span 2' }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600' }}>Project Details / Message</label>
-          <textarea required rows="4" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #eaeaea', resize: 'vertical' }} disabled={isSubmitting}></textarea>
+        <div className="form-group-full">
+          <label className="form-label">Project Details / Message</label>
+          <textarea className="form-input" required rows="4" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} style={{ resize: 'vertical' }} disabled={isSubmitting}></textarea>
         </div>
 
-        <button type="submit" className="btn-primary" style={{ gridColumn: 'span 2', padding: '15px', justifyContent: 'center' }} disabled={isSubmitting}>
+        <button type="submit" className="btn-primary form-submit-btn" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Request Appointment'}
         </button>
       </form>

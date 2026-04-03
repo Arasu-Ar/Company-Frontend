@@ -1988,6 +1988,58 @@
   }
 }
 
+/* ================= GET STARTED FORM ================= */
+.get-started-container {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 60vh;
+}
+
+.get-started-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-group-full {
+  grid-column: span 2;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--green-accent);
+}
+
+.form-submit-btn {
+  grid-column: span 2;
+  padding: 15px;
+  justify-content: center;
+}
+
 /* ================= SUBMIT ANIMATION ================= */
 .form-submitting {
   pointer-events: none;
@@ -2466,10 +2518,12 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
+  
   /* Hide 5th and 6th cards on mobile */
   .market-v2-card:nth-child(n+5) {
     display: none;
   }
+
   .market-v2-card-desc {
     display: none;
   }
@@ -2648,6 +2702,21 @@
   .admin-login-card {
     padding: 36px 24px;
   }
+  
+  /* --- Get Started Form --- */
+  .get-started-form {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+  .form-group-full {
+    grid-column: span 1;
+  }
+  .form-submit-btn {
+    grid-column: span 1;
+  }
+  .get-started-container {
+    padding: 40px 20px;
+  }
 
   /* --- Admin Panel Mobile --- */
   .admin-layout {
@@ -2779,10 +2848,7 @@
   .market-v2-title {
     font-size: 22px;
   }
-  /* On very small screens show only 2 market cards */ 
-  .market-v2-card:nth-child(n+3) {
-    display: none;
-  }
+
 }
 
 @media (max-width: 768px) {
